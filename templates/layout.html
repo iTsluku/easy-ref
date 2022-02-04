@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+        <title>{% block title %}{% endblock %} &lambda; easy-ref</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+      {% block footer %}
+          &copy; Copyright 2022 by easy-ref.
+      {% endblock %}
+    </div>
+  </body>
+</html>
