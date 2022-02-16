@@ -1,5 +1,18 @@
 body{
+    --text-color: black;
+    --background-color:white;
+    --header-background-color:white;
+
     margin: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+body.dark{
+    --text-color: white;
+    --background-color:#333;
+    --header-background-color:#333;
+    --btn-text-color: black;
 }
 
 *, *::before, *::after {
@@ -8,8 +21,8 @@ body{
 
 :root {
     --header-height: 65px;
-    --dark-grey: rgb(80,80,80);
-    --light-grey: rgb(211,211,211);
+    --btn-text-color: rgb(80,80,80);
+    --btn-hover-color: rgb(211,211,211);
     --animation-duration: 200ms;
     --animation-timing-curve: ease-in-out;
 }
@@ -19,10 +32,10 @@ body{
     align-items:center;
     position: sticky;
     top: 0;
-    background-color:white;
     box-shadow: 0 1px 7px 0px rgba(0,0,0,.25);
     padding: 0 .5rem;
     height: var(--header-height);
+    background-color: var(--header-background-color);
 }
 
 .menu-icon-btn{
@@ -40,7 +53,7 @@ body{
     flex-shrink: 0;
     overflow:hidden;
     width: 80px;
-    border-right: 1px solid var(--dark-grey);
+    border-right: 1px solid var(--btn-text-color);
     display: flex;
     flex-direction: column;
     height: calc(100vh - var(--header-height));
@@ -94,8 +107,8 @@ body{
 }
 
 .bottom-sidebar{
-    border-top: 1px solid;
-    border-bottom: 1px solid;
+    border-top: 1px solid var(--btn-text-color);
+    border-bottom: 1px solid var(--btn-text-color);
 }
 
 .container{
@@ -120,7 +133,7 @@ body{
     width: 100%;
     justify-content: center;
     padding: 0.5rem 0;
-    color: var(--dark-grey);
+    color: var(--btn-text-color);
     text-decoration: none;
 }
 
@@ -132,5 +145,5 @@ body{
 }
 
 .sidebar-list-item:hover{
-    background-color: var(--light-grey);
+    background-color: var(--btn-hover-color);
 }
