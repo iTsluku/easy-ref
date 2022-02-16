@@ -1,3 +1,149 @@
-h1 {
-    color: blue;
+body{
+    --text-color: black;
+    --background-color:white;
+    --header-background-color:white;
+
+    margin: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+body.dark{
+    --text-color: white;
+    --background-color:#333;
+    --header-background-color:#333;
+    --btn-text-color: black;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --header-height: 65px;
+    --btn-text-color: rgb(80,80,80);
+    --btn-hover-color: rgb(211,211,211);
+    --animation-duration: 200ms;
+    --animation-timing-curve: ease-in-out;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px 7px 0px rgba(0,0,0,.25);
+    padding: 0 .5rem;
+    height: var(--header-height);
+    background-color: var(--header-background-color);
+}
+
+.menu-icon-btn{
+    background:none;
+    border:none;
+}
+
+.menu-icon{
+    width:35px;
+    height:35px;
+    cursor: pointer;
+}
+
+.sidebar{
+    flex-shrink: 0;
+    overflow:hidden;
+    width: 80px;
+    border-right: 1px solid var(--btn-text-color);
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height));
+    padding-top: 1rem;
+}
+
+.sidebar .hidden-sidebar {
+  opacity: 0;
+  width: 0;
+  transition: opacity var(--animation-duration) var(--animation-timing-curve);
+}
+
+.sidebar.open .hidden-sidebar {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+}
+
+.sidebar.open .sidebar-link{
+    justify-content: flex-start;
+    padding-left: 1rem;
+}
+
+.sidebar-list-item-preview {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.sidebar.open .sidebar-list-item-preview {
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+}
+
+.sidebar.open{
+    width: 170px;
+}
+
+.middle-sidebar,
+.bottom-sidebar{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.middle-sidebar{
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bottom-sidebar{
+    border-top: 1px solid var(--btn-text-color);
+    border-bottom: 1px solid var(--btn-text-color);
+}
+
+.container{
+    display:flex;
+}
+
+.content{
+    margin: 1rem;
+}
+
+.sidebar-list{
+    margin:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+}
+
+.sidebar-link{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.5rem 0;
+    color: var(--btn-text-color);
+    text-decoration: none;
+}
+
+.sidebar-list-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem 0;
+}
+
+.sidebar-list-item:hover{
+    background-color: var(--btn-hover-color);
 }

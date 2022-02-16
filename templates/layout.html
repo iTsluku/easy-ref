@@ -1,17 +1,140 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     {% block head %}
-      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
-        <title>{% block title %}{% endblock %} &lambda; easy-ref</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/stylesheet.css') }}">
+    <script src="{{ url_for('static',filename='js/nav.js') }}" defer></script>
+    <script src="{{ url_for('static',filename='js/theme.js') }}" defer></script>
+    <title>{% block title %}{% endblock %} &lambda; easy-ref</title>
     {% endblock %}
-  </head>
-  <body>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
-      {% block footer %}
-          &copy; Copyright 2022 by easy-ref.
-      {% endblock %}
-    </div>
-  </body>
+</head>
+<body>
+<header class="header">
+    <button class="menu-icon-btn" data-menu-icon-btn>
+        <img class="menu-icon" src="{{url_for('static', filename='images/menu-icon.svg')}}"/>
+    </button>
+    <button class="theme-toggle-button">
+        Theme
+    </button>
+</header>
+<div class="container">
+    <aside class="sidebar" data-sidebar>
+        <div class="middle-sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">D</div>
+                        <div class="hidden-sidebar">Dashboard</div>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">G</div>
+                        <div class="hidden-sidebar">Groups</div>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">C</div>
+                        <div class="hidden-sidebar">Customization</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-list-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">S</div>
+                        <div class="hidden-sidebar">Settings</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <main class="content">
+        {% block content %}{% endblock %}
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorem earum eius est fuga harum hic
+            incidunt nemo optio quae quas quasi, qui rem sint suscipit temporibus tenetur voluptatem. Aliquid at dicta
+            distinctio dolor dolores ea error fugiat, impedit minima minus nesciunt, pariatur ratione rerum similique
+            totam ullam unde. Ea illum molestiae reiciendis ut voluptates? A ab autem culpa debitis deserunt dolorem
+            illo ipsam iusto odit pariatur provident quidem rem rerum sapiente sit suscipit, velit! Ab aperiam aut
+            consectetur corporis cumque deserunt dignissimos dolorem ducimus eligendi eveniet id illum iusto minus modi
+            mollitia nam, nostrum odit perferendis quae, quia ratione sapiente soluta tempore unde vero. Ad adipisci
+            aspernatur, at beatae cupiditate delectus dolores earum eos error facilis iste labore mollitia non numquam
+            officia quidem reiciendis repudiandae saepe tempore voluptates. Alias, aliquam assumenda consequatur
+            consequuntur deleniti dicta dolor eius eveniet ipsa iusto magnam maiores maxime, modi, molestias numquam
+            officia omnis perspiciatis quaerat quam repellendus tempora vitae voluptatum. A, ad aperiam architecto autem
+            delectus dolorem doloribus eos id illum labore magnam neque non nulla? Ad architecto dicta ducimus earum,
+            eos ex, incidunt inventore iure perspiciatis placeat, rem repellat tempore. Commodi cupiditate dolor hic,
+            illo nam reiciendis soluta suscipit vero? Commodi deleniti facilis minima ut. Aut commodi corporis libero
+            maxime nesciunt. Ab architecto commodi dignissimos eveniet exercitationem facere magnam nulla, quidem
+            temporibus totam veniam voluptate. Accusantium aliquid at commodi deleniti distinctio doloremque eius
+            eligendi esse, et excepturi hic ipsum laboriosam libero minima nihil perspiciatis quaerat qui quisquam
+            reiciendis repellat sit soluta ut velit. Distinctio eaque ex explicabo nulla sed. Aliquid, dolor expedita
+            explicabo inventore nemo quaerat quam rerum sed. Aperiam delectus dicta dolores eos hic illo illum incidunt
+            magnam maxime minus nam neque nulla obcaecati perferendis, quia quisquam quod rem, repudiandae sapiente,
+            veritatis! Aperiam architecto debitis delectus dolore esse, eum eveniet id illum libero officiis quaerat
+            quis recusandae reiciendis repellat tenetur! Cum eligendi iusto nesciunt quibusdam? Aliquid consequuntur
+            dolorem eligendi esse eveniet excepturi exercitationem explicabo fugiat illo impedit laborum minima modi
+            natus nihil nisi, nostrum officia perferendis porro quasi quo rem repellat saepe sunt totam vel. Animi
+            mollitia provident quibusdam repudiandae. Alias aliquid autem consequatur ducimus eaque impedit incidunt
+            ipsa ipsam itaque, laborum molestias necessitatibus omnis quaerat quia quidem reiciendis sed unde. Accusamus
+            accusantium animi at atque autem blanditiis consectetur consequatur consequuntur delectus ducimus eum fugit
+            ipsam itaque iure, iusto neque nihil nobis nostrum officia perferendis porro quos sed sequi sit vero vitae
+            voluptatem. Aliquam aliquid animi architecto beatae eligendi, enim mollitia neque perspiciatis possimus
+            voluptatum! Accusamus aliquid autem cum cumque debitis deserunt distinctio dolore eius enim ex excepturi
+            exercitationem inventore ipsam iusto mollitia natus necessitatibus non nulla possimus quisquam, quos
+            reprehenderit sint tempora ullam vero voluptate voluptatibus? Accusantium alias, at atque, aut autem cum,
+            cumque ducimus ea fuga harum iste magnam molestias neque nulla officia quibusdam repellat reprehenderit. A
+            aperiam architecto assumenda, dignissimos earum eligendi esse ex excepturi expedita facilis id ipsam itaque
+            libero minus, officia placeat praesentium quaerat quas quod repudiandae saepe voluptate voluptatem!
+            Accusantium, autem blanditiis deleniti expedita facere harum hic illo itaque libero magni minima nam
+            obcaecati odit, perferendis quaerat quisquam veniam voluptas. Ab animi aspernatur aut deleniti deserunt
+            dicta dolores, dolorum eaque error eveniet exercitationem expedita itaque iure labore maxime nihil nobis
+            numquam obcaecati odio, perspiciatis praesentium quidem reiciendis repellendus temporibus totam vel, velit
+            veritatis voluptate voluptates voluptatum! Accusamus commodi cum, ducimus, fugiat modi, molestias natus
+            nobis non officiis quam qui tempora. Adipisci, labore, sunt. Molestiae odio officia omnis provident qui! Ab
+            aliquid debitis esse est eum facilis iusto molestiae obcaecati, porro vitae. Accusantium ad, aliquam
+            asperiores atque autem blanditiis deleniti ducimus eius eligendi excepturi expedita fuga illo iure laborum
+            libero magni, maiores maxime molestiae necessitatibus nisi nulla numquam omnis possimus praesentium quam qui
+            quo reiciendis repellat reprehenderit veniam! Aliquid asperiores assumenda, deserunt enim ipsam molestiae
+            odit pariatur placeat quod sequi? Ab accusantium, alias aliquid animi architecto beatae dolore dolorum, ea
+            eius eos et eveniet explicabo ipsum magnam minus nam nihil nisi pariatur porro reiciendis repellat rerum
+            sunt totam ut veritatis, vero voluptates! Accusamus, magni, vitae. Adipisci aperiam assumenda atque
+            consequatur corporis ex hic minima porro, quia quisquam! A ad aspernatur, beatae, blanditiis dolores
+            doloribus dolorum eaque et eum excepturi expedita explicabo facere facilis fugit harum hic ipsum iusto,
+            magnam maiores minus mollitia nemo nostrum odio perspiciatis quidem quis quod rem repellendus soluta
+            suscipit tempora tenetur voluptas voluptatem. A accusantium autem corporis delectus explicabo minima numquam
+            officiis! Magnam maxime ratione sit. Ab animi at hic illo repellat sapiente! Aliquid, laboriosam, sint.
+            Accusamus accusantium assumenda, autem consectetur cum cupiditate dolorum earum eos fugiat fugit illum ipsum
+            iste labore laborum magnam maxime nisi non obcaecati officiis optio quae quaerat quas quos repellat vitae.
+            Architecto incidunt laboriosam maiores maxime perspiciatis praesentium tempore? Accusantium, ad atque,
+            distinctio dolore, harum id illum odit pariatur possimus quibusdam saepe suscipit tenetur? Aliquid
+            architecto, excepturi fuga fugit incidunt iure odio quae quam quisquam soluta, tenetur vitae voluptates.
+            Accusantium aperiam aspernatur consequuntur cumque cupiditate dicta dolor esse, eum facilis in ipsa itaque
+            laboriosam libero magnam, molestias nemo odit perspiciatis quaerat quas quod ratione rem, tenetur
+            voluptates. A ab adipisci aspernatur assumenda aut blanditiis debitis dignissimos ea earum eligendi fugiat
+            id laborum maiores molestiae nam nostrum, omnis praesentium quidem quis quo reprehenderit, sapiente tenetur!
+            A adipisci at atque distinctio, expedita natus nobis? Distinctio eos eum ex molestiae quod soluta sunt unde.
+            Aut autem culpa, earum officiis possimus tempore ut. Accusamus accusantium aliquam amet architecto autem
+            beatae consectetur deleniti doloremque dolores eos est ex explicabo iure magni mollitia natus, nemo neque
+            nulla, perspiciatis provident quaerat quam quasi qui ratione rem repellendus, reprehenderit saepe sapiente
+            soluta tempora tenetur totam ut vel velit voluptas voluptate voluptatem. Aperiam atque distinctio dolorum
+            fugiat nam natus nihil porro quae quaerat, ratione, sint tempora, voluptatem voluptatum. Culpa cupiditate
+            distinctio dolores dolorum eligendi, ex explicabo impedit incidunt ipsam itaque, iure mollitia natus neque
+            nobis nulla odio odit officiis praesentium quaerat quibusdam quidem quod reprehenderit tempore ullam ut, vel
+            voluptas? A culpa cumque earum eos esse fugit harum, in labore molestias omnis, placeat qui quibusdam,
+            suscipit totam.</p>
+    </main>
+</div>
+
+<div class="footer">
+    {% block footer %}
+    &copy; Copyright 2022 by easy-ref.
+    {% endblock %}
+</div>
+</body>
 </html>
