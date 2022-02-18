@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-  <h1>Welcome to easy-ref!</h1>
+  <div class="container flexbox-container">
+    {% for container in containers %}
+      <div class="flexbox-item">
+        <h3>{{container.title}}</h3>
+        <p>{{container.description}}</p>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}
