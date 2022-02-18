@@ -24,6 +24,12 @@
         <div class="middle-sidebar">
             <ul class="sidebar-list">
                 <li class="sidebar-list-item">
+                    <a href="{{url_for('home')}}" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">H</div>
+                        <div class="hidden-sidebar">Home</div>
+                    </a>
+                </li>
+                <li class="sidebar-list-item">
                     <a href="#" class="sidebar-link">
                         <div class="sidebar-list-item-preview">D</div>
                         <div class="hidden-sidebar">Dashboard</div>
@@ -41,6 +47,12 @@
                         <div class="hidden-sidebar">Customization</div>
                     </a>
                 </li>
+                <li class="sidebar-list-item">
+                    <a href="{{url_for('about')}}" class="sidebar-link">
+                        <div class="sidebar-list-item-preview">A</div>
+                        <div class="hidden-sidebar">About</div>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="bottom-sidebar">
@@ -56,31 +68,6 @@
     </aside>
     <main class="container content">
         {% block content %}{% endblock %}
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorem earum eius est fuga harum hic
-            incidunt nemo optio quae quas quasi,
-        <div id="msg-danger">dolores ea error fugiat, impedit minima minus nesciunt, pariatur ratione rerum similique
-            totam ullam unde. Ea illum molestiae reiciendis
-        </div>
-        illo ipsam iusto odit pariatur provident quidem rem rerum sapiente sit suscipit, velit! Ab aperiam aut
-        consectetur corporis cumque deserunt dignissimos dolorem ducimus eligendi eveniet id illum iusto minus modi
-        mollitia nam
-        <div id="msg-warning">cupiditate delectus dolores earum eos error facilis iste labore mollitia non numquam
-            officia quidem reiciendis repudiandae saepe tempore voluptates.
-        </div>
-        Alias, aliquam assumenda consequatur
-        consequuntur deleniti dicta dolor eius eveniet empora vitae voluptatum. A, ad aperiam architecto autem
-        delectus dolorem doloribus eos id illum labore magnam neque non nulla?
-        <div id="msg-success">commodi dignissimos eveniet exercitationem facere magnam nulla, quidem
-            temporibus totam veniam voluptate. Accusantium aliquid at commodi deleniti distinctio doloremque eius
-            eligendi esse, et excepturi hic ipsum laboriosam libero minima
-        </div>
-        nihil perspiciatis quaerat qui quisquam
-        reiciendis repellat sit soluta ut velit. Aliquid, dolor expedita
-        explicabo inventore nemo quaerat quam rerum sed.
-        <div id="msg-info">delectus dolore esse, eum eveniet id illum libero
-        </div>
-        Alias aliquid autem consequatur ducimus eaque impedit incidunt
-        ipsa ipsam itaque, laborum molestias necessitatibus omnis quaerat quia quidem reiciendis sed unde.</p>
     </main>
 </div>
 
