@@ -23,13 +23,19 @@ containers = [
 
 
 @app.route("/")
+@app.route("/home")
 def home():
     return render_template("home.html", containers=containers)
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e):
     return render_template("page_not_found.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 if __name__ == "__main__":
