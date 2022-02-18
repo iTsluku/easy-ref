@@ -7,7 +7,7 @@ body{
     --text-color: black;
 
     --primary-color-1:#EBFCFB;
-    --primary-color-2:#417B5A;
+    --primary-color-2:#00916E;
     --secondary-color-1:#C9F0FF;
     --accent-color-1:#961D4E;
 
@@ -19,7 +19,6 @@ body{
 body.dark{
     --text-color: white;
     --primary-color-1:#2C363F;
-    --primary-color-2:#00916E;
     --btn-text-color: white;
 }
 
@@ -107,7 +106,7 @@ body.dark{
     border-bottom: 1px solid var(--btn-text-color);
 }
 
-.container{
+.my-container{
     display:flex;
 }
 
@@ -203,5 +202,25 @@ body.dark #msg-success{
 }
 
 body.dark #msg-info{
+    color: black;
+}
+
+/* href container */
+
+.flexbox-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexbox-item{
+    background: var(--secondary-color-1);
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid var(--btn-text-color);
+    border-radius: 3px;
+    text-align: center;
+}
+
+body.dark .flexbox-item{
     color: black;
 }
