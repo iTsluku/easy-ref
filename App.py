@@ -19,19 +19,6 @@ containers = [
     {"title": "Ref Stack K", "description": "bla bla bla"},
     {"title": "Ref Stack L", "description": "bla bla bla bla bla"},
     {"title": "Ref Stack M", "description": "bla bla bla"},
-    {"title": "Ref Stack N", "description": "bla bla bla"},
-    {"title": "Ref Stack O", "description": "bla bla bla"},
-    {"title": "Ref Stack P", "description": "bla bla bla"},
-    {"title": "Ref Stack Q", "description": "bla bla bla bla bla bla bla"},
-    {"title": "Ref Stack R", "description": "bla bla bla"},
-    {"title": "Ref Stack S", "description": "bla bla bla"},
-    {"title": "Ref Stack T", "description": "bla bla bla bla bla"},
-    {"title": "Ref Stack U", "description": "bla bla bla"},
-    {"title": "Ref Stack V", "description": "bla bla bla"},
-    {"title": "Ref Stack W", "description": "bla bla bla bla bla bla bla"},
-    {"title": "Ref Stack X", "description": "bla bla bla bla bla"},
-    {"title": "Ref Stack Y", "description": "bla bla bla"},
-    {"title": "Ref Stack Z", "description": "bla bla bla"},
 ]
 
 
