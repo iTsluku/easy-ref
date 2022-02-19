@@ -6,10 +6,10 @@ body{
 
     --text-color: black;
 
-    --primary-color-1:#EBFCFB;
+    --primary-color-1:#F6F6F6;
     --primary-color-2:#97A9B4;
     --secondary-color-1:#C9F0FF;
-    --secondary-color-2:white;
+    --secondary-color-2:#EBFCFB;
     --accent-color-1:#7289DA;
 
     margin: 0;
@@ -246,6 +246,6 @@ body.dark .flexbox-item{
 }
 
 .footer{
-    background-color: var(--secondary-color-2);
+    background-color: var(--accent-color-1);
     padding: 10px;
 }
