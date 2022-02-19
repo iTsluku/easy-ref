@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block title %}Customization{% endblock %}
+{% block content %}
+    {% if containers %}
+        {% for container in containers %}
+            <div class="container flexbox-container">
+                {% for key, value in container.items() %}
+                    {% if key == 'links' %}
+                        <div class="link-container-title">{{ container.title }}</div>
+                        {% if value %}
+                            {% for item in value %}
+                                <div class="flexbox-item">
+                                    {% for k, v in item.items() %}
+                                        {% if k == 'title' %}
+                                            <div class="link-container-item-title">{{ v }}</div>
+                                        {% endif %}
+                                        {% if k == 'link' %}
+                                            <div class="link-container-item-link">{{ v }}</div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
