@@ -29,7 +29,7 @@ body.dark{
 }
 
 :root {
-    --header-height: 65px;
+    --header-height: 70px;
     --btn-text-color: rgb(80,80,80);
     --animation-duration: 200ms;
     --animation-timing-curve: ease-in-out;
@@ -240,7 +240,12 @@ body.dark .flexbox-item{
     color: black;
 }
 
+.easy-ref-logo{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .footer{
-background-color: var(--secondary-color-2);
-padding: 10px;
+    background-color: var(--secondary-color-2);
+    padding: 10px;
 }
