@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% block title %}Customization{% endblock %}
+{% block content %}
+    {% if containers %}
+        <div class="container draggable-container-space">
+            {% for container in containers %}
+                <div class="container flexbox-container draggable-container" draggable="true">
+                    {% for key, value in container.items() %}
+                        {% if key == 'links' %}
+                            <div class="link-container-title">{{ container.title }}</div>
+                            {% if value %}
+                                {% for item in value %}
+                                    <div class="flexbox-item draggable-item" draggable="true" ondragstart="event.stopPropagation();">
+                                        {% for k, v in item.items() %}
+                                            {% if k == 'title' %}
+                                                <div class="link-container-item-title">{{ v }}</div>
+                                            {% endif %}
+                                            {% if k == 'link' %}
+                                                <div class="hide link-container-item-link">{{ v }}</div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static',filename='js/dragging.js') }}" defer></script>
+{% endblock %}

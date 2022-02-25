@@ -15,6 +15,9 @@
     <button class="menu-icon-btn" data-menu-icon-btn>
         <img class="menu-icon" src="{{url_for('static', filename='images/menu-icon.svg')}}"/>
     </button>
+    <div class="easy-ref-logo">
+        <img src="{{url_for('static', filename='images/easy-ref.png')}}"/>
+    </div>
     <button class="theme-toggle-button">
         Theme
     </button>
@@ -30,19 +33,7 @@
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link">
-                        <div class="sidebar-list-item-preview">D</div>
-                        <div class="hidden-sidebar">Dashboard</div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link">
-                        <div class="sidebar-list-item-preview">G</div>
-                        <div class="hidden-sidebar">Groups</div>
-                    </a>
-                </li>
-                <li class="sidebar-list-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="{{url_for('customization')}}" class="sidebar-link">
                         <div class="sidebar-list-item-preview">C</div>
                         <div class="hidden-sidebar">Customization</div>
                     </a>
@@ -85,7 +76,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<script src="{{ url_for('static',filename='js/nav.js') }}" defer></script>
-<script src="{{ url_for('static',filename='js/theme.js') }}" defer></script>
+<script src="{{ url_for('static',filename='js/local_storage.js') }}" defer></script>
+{% block script %}{% endblock %}
 </body>
 </html>

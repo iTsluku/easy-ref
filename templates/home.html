@@ -1,12 +1,32 @@
 {% extends "layout.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-  <div class="container flexbox-container">
-    {% for container in containers %}
-      <div class="flexbox-item">
-        <h3>{{container.title}}</h3>
-        <p>{{container.description}}</p>
-      </div>
-    {% endfor %}
-  </div>
+    {% if containers %}
+        <div class="container flexbox-container">
+            {% for container in containers %}
+                {% for key, value in container.items() %}
+                    {% if key == 'links' %}
+                        <div class="flexbox-item open-new-tabs">
+                            <div class="link-container-title">{{ container.title }}</div>
+                            {% if value %}
+                                {% for item in value %}
+                                    {% for k, v in item.items() %}
+                                        {% if k == 'title' %}
+                                            <div class="link-container-item-title">{{ v }}</div>
+                                        {% endif %}
+                                        {% if k == 'link' %}
+                                            <div class="hide link-container-item-link">{{ v }}</div>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static',filename='js/open_new_tabs.js') }}" defer></script>
 {% endblock %}

@@ -6,10 +6,10 @@ body{
 
     --text-color: black;
 
-    --primary-color-1:#EBFCFB;
+    --primary-color-1:#F6F6F6;
     --primary-color-2:#97A9B4;
     --secondary-color-1:#C9F0FF;
-    --secondary-color-2:white;
+    --secondary-color-2:#EBFCFB;
     --accent-color-1:#7289DA;
 
     margin: 0;
@@ -29,10 +29,14 @@ body.dark{
 }
 
 :root {
-    --header-height: 65px;
+    --header-height: 70px;
     --btn-text-color: rgb(80,80,80);
     --animation-duration: 200ms;
     --animation-timing-curve: ease-in-out;
+}
+
+.hide{
+    display: none;
 }
 
 .header{
@@ -146,6 +150,30 @@ body.dark{
     color:white;
 }
 
+.open-new-tabs{
+    cursor: pointer;
+}
+
+
+/* customization dragging */
+
+.container.content{
+    padding: 0;
+}
+
+.draggable-container{
+    cursor: move;
+}
+
+.draggable-item{
+    cursor: move;
+}
+
+.draggable-container.dragging-container, .draggable-item.dragging-item{
+    opacity: 0.2;
+}
+
+
 /* header */
 
 .menu-icon-btn{
@@ -221,6 +249,12 @@ body.dark #msg-info{
 .flexbox-container{
     display: flex;
     flex-wrap: wrap;
+    background: var(--secondary-color-2);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    width: auto;
+    border: 1px solid var(--btn-text-color);
 }
 
 .flexbox-item{
@@ -234,9 +268,15 @@ body.dark #msg-info{
 
 body.dark .flexbox-item{
     color: black;
+    border: none;
+}
+
+.easy-ref-logo{
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .footer{
-background-color: var(--secondary-color-2);
-padding: 10px;
+    background-color: var(--accent-color-1);
+    padding: 10px;
 }
