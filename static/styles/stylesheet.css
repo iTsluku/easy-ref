@@ -227,6 +227,10 @@ body.dark #msg-info{
     border-radius: 3px;
 }
 
+body.light .flexbox-container{
+    border: 1px solid var(--btn-text-color);
+}
+
 .flexbox-item{
     background: var(--secondary-color-1);
     padding: 5px;
@@ -238,6 +242,7 @@ body.dark #msg-info{
 
 body.dark .flexbox-item{
     color: black;
+    border: none;
 }
 
 .easy-ref-logo{
