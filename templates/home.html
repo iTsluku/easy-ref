@@ -6,13 +6,16 @@
             {% for container in containers %}
                 {% for key, value in container.items() %}
                     {% if key == 'links' %}
-                        <div class="flexbox-item">
+                        <div class="flexbox-item open-new-tabs">
                             <div class="link-container-title">{{ container.title }}</div>
                             {% if value %}
                                 {% for item in value %}
                                     {% for k, v in item.items() %}
                                         {% if k == 'title' %}
                                             <div class="link-container-item-title">{{ v }}</div>
+                                        {% endif %}
+                                        {% if k == 'link' %}
+                                            <div class="hide link-container-item-link">{{ v }}</div>
                                         {% endif %}
                                     {% endfor %}
                                 {% endfor %}

@@ -35,6 +35,10 @@ body.dark{
     --animation-timing-curve: ease-in-out;
 }
 
+.hide{
+    display: none;
+}
+
 .header{
     display:flex;
     align-items:center;
@@ -144,6 +148,10 @@ body.dark{
 .sidebar-link:hover{
     background-color: var(--accent-color-1);
     color:white;
+}
+
+.open-new-tabs{
+    cursor: pointer;
 }
 
 /* header */
