@@ -38,8 +38,14 @@ containers = [
             {"title": "Documentation", "link": "https://docs.python.org/3/"},
             {"title": "Regex", "link": "https://docs.python.org/3/library/re.html"},
             {
-                "title": "Mock",
+                "title": "interesting mock doc",
                 "link": "https://docs.python.org/3/library/unittest.mock.html",
+            },
+            {"title": "filler title one 1", "link": "https://docs.python.org/3/"},
+            {"title": "new filler title", "link": "https://docs.python.org/3/"},
+            {
+                "title": "mystery ref box link thingy",
+                "link": "https://docs.python.org/3/",
             },
         ],
     },
@@ -52,7 +58,37 @@ containers = [
                 "title": "read blog post",
                 "link": "https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/",
             },
+            {"title": "deepl", "link": "https://www.deepl.com/de/translator"},
+            {
+                "title": "XML TEI",
+                "link": "https://komax.github.io/blog/text/python/xml/parsing_tei_xml_python/",
+            },
+            {"title": "bias wiki", "link": "https://en.wikipedia.org/wiki/Bias"},
+            {
+                "title": "least squares coding challenge",
+                "link": "https://scipy-cookbook.readthedocs.io/items/Least_Squares_Circle.html",
+            },
+            {
+                "title": "drap prop inheritance prob",
+                "link": "https://stackoverflow.com/questions/6848140/how-do-i-prevent-drag-on-a-child-but-allow-drag-on-the-parent",
+            },
         ],
+    },
+    {
+        "title": "Temp link dump 2",
+        "links": [],
+    },
+    {
+        "title": "Temp link dump 3",
+        "links": [],
+    },
+    {
+        "title": "random 4",
+        "links": [],
+    },
+    {
+        "title": "rm later",
+        "links": [],
     },
 ]
 

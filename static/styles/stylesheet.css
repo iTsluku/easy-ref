@@ -161,13 +161,6 @@ body.dark{
     padding: 0;
 }
 
-.draggable-container-space{
-    background-color: var(--primary-color-1);
-    padding: 10px;
-    border: 1px solid var(--primary-color-2);
-    border-radius: 7px;
-}
-
 .draggable-container{
     cursor: move;
 }

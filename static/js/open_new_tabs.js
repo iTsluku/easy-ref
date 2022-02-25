@@ -1,4 +1,4 @@
-var linkContainer = document.getElementsByClassName('open-new-tabs');
+var linkContainer = document.querySelectorAll('.open-new-tabs');
 
 for (var i=0, c; c = linkContainer[i]; i++) {
     var collection = c.getElementsByClassName('link-container-item-link');

@@ -16,7 +16,7 @@
                                                 <div class="link-container-item-title">{{ v }}</div>
                                             {% endif %}
                                             {% if k == 'link' %}
-                                                <div class="link-container-item-link">{{ v }}</div>
+                                                <div class="hide link-container-item-link">{{ v }}</div>
                                             {% endif %}
                                         {% endfor %}
                                     </div>
@@ -28,4 +28,7 @@
             {% endfor %}
         </div>
     {% endif %}
+{% endblock %}
+{% block script %}
+    <script src="{{ url_for('static',filename='js/dragging.js') }}" defer></script>
 {% endblock %}
