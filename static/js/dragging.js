@@ -74,7 +74,7 @@ function getDragAfterElementByYX(container,x,y){
         if (offsetY<0 && offsetY>closest.offsetY){
             return {offsetX: offsetX,offsetY: offsetY, element: child}
         }
-        if (offsetY<box.height && offsetX<0 && offsetX>closest.offsetX){
+        if (offsetY<box.height && offsetX<0 && offsetX>closest.offsetX && offsetY>=closest.offsetY){
             return {offsetX: offsetX,offsetY: offsetY, element: child}
         }
         return closest
