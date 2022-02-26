@@ -70,11 +70,11 @@ function getDragAfterElementByYX(container,x,y){
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect()
         const offsetY = y - box.top
-        const offsetX = x - box.left - (box.width / 4)
+        const offsetX = x - box.left - (box.width / 2)
         if (offsetY<0 && offsetY>closest.offsetY){
             return {offsetX: offsetX,offsetY: offsetY, element: child}
         }
-        if (offsetY<box.height && offsetX<0 && offsetX>closest.offsetX){
+        if (offsetY<box.height && offsetX<0 && offsetX>closest.offsetX && offsetY>=closest.offsetY){
             return {offsetX: offsetX,offsetY: offsetY, element: child}
         }
         return closest
