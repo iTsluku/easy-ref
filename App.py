@@ -1,102 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
+from flask import request
+from static.py.input import get_input, update_input
 
 app = Flask(__name__)
-
-containers = [
-    {
-        "title": "Media",
-        "links": [
-            {"title": "YouTube", "link": "https://www.youtube.com/"},
-            {"title": "Twitch", "link": "https://www.twitch.tv/"},
-            {"title": "Twitter", "link": "https://twitter.com/home"},
-        ],
-    },
-    {
-        "title": "E-Mail",
-        "links": [
-            {"title": "GMail", "link": "https://mail.google.com/"},
-            {
-                "title": "Outlook",
-                "link": "https://email.uni-passau.de/",
-            },
-        ],
-    },
-    {
-        "title": "Thesis",
-        "links": [
-            {"title": "NDB", "link": "https://www.deutsche-biographie.de/"},
-            {"title": "NDB API", "link": "http://data.deutsche-biographie.de/about/"},
-            {
-                "title": "Wikidata",
-                "link": "https://www.wikidata.org/wiki/Wikidata:Main_Page",
-            },
-        ],
-    },
-    {
-        "title": "Python",
-        "links": [
-            {"title": "Documentation", "link": "https://docs.python.org/3/"},
-            {"title": "Regex", "link": "https://docs.python.org/3/library/re.html"},
-            {
-                "title": "interesting mock doc",
-                "link": "https://docs.python.org/3/library/unittest.mock.html",
-            },
-            {"title": "filler title one 1", "link": "https://docs.python.org/3/"},
-            {"title": "new filler title", "link": "https://docs.python.org/3/"},
-            {
-                "title": "mystery ref box link thingy",
-                "link": "https://docs.python.org/3/",
-            },
-        ],
-    },
-    {
-        "title": "Temp link dump",
-        "links": [
-            {"title": "R", "link": "https://packages.othr.de/cran/"},
-            {"title": "i3wm", "link": "https://i3wm.org/"},
-            {
-                "title": "read blog post",
-                "link": "https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/",
-            },
-            {"title": "deepl", "link": "https://www.deepl.com/de/translator"},
-            {
-                "title": "XML TEI",
-                "link": "https://komax.github.io/blog/text/python/xml/parsing_tei_xml_python/",
-            },
-            {"title": "bias wiki", "link": "https://en.wikipedia.org/wiki/Bias"},
-            {
-                "title": "least squares coding challenge",
-                "link": "https://scipy-cookbook.readthedocs.io/items/Least_Squares_Circle.html",
-            },
-            {
-                "title": "drap prop inheritance prob",
-                "link": "https://stackoverflow.com/questions/6848140/how-do-i-prevent-drag-on-a-child-but-allow-drag-on-the-parent",
-            },
-        ],
-    },
-    {
-        "title": "Temp link dump 2",
-        "links": [],
-    },
-    {
-        "title": "Temp link dump 3",
-        "links": [],
-    },
-    {
-        "title": "random 4",
-        "links": [],
-    },
-    {
-        "title": "rm later",
-        "links": [],
-    },
-]
 
 
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", containers=containers)
+    return render_template("home.html", containers=get_input())
 
 
 @app.errorhandler(404)
@@ -109,9 +21,16 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/customization")
+@app.route("/customization", methods=["GET", "POST"])
 def customization():
-    return render_template("customization.html", containers=containers)
+    if request.method == "GET":
+        return render_template("customization.html", containers=get_input())
+    elif request.method == "POST":
+        content_type = request.headers.get("Content-Type")
+        if content_type == "application/json":
+            content = request.json
+            update_input(content)
+        return jsonify({})
 
 
 if __name__ == "__main__":

@@ -1,5 +1,10 @@
 {% extends "layout.html" %}
 {% block title %}Customization{% endblock %}
+{% block header %}
+    <button class="save-customization-button">
+        Save
+    </button>
+{% endblock %}
 {% block content %}
     {% if containers %}
         <div class="container draggable-container-space">
@@ -31,4 +36,5 @@
 {% endblock %}
 {% block script %}
     <script src="{{ url_for('static',filename='js/dragging.js') }}" defer></script>
+    <script src="{{ url_for('static',filename='js/customization.js') }}" defer></script>
 {% endblock %}
