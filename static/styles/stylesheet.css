@@ -211,7 +211,7 @@ body.dark{
     cursor: pointer;
 }
 
-.theme-toggle-button{
+.theme-toggle-button, .save-customization-button{
 background-color: var(--accent-color-1);
 color: var(--text-color);
 display:flex;
